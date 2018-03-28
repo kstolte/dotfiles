@@ -1,0 +1,35 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Keith Stolte
+[user]
+	email = keithrstolte@gmail.com
+	[diff]
+	tool = vsdiffmerge
+[difftool]
+	prompt = true
+[difftool "vsdiffmerge"]
+	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$LOCAL\" \"$REMOTE\" //t
+	keepBackup = false
+[merge]
+	tool = vsdiffmerge
+[mergetool]
+	prompt = true
+[mergetool "vsdiffmerge"]
+	cmd = \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\vsdiffmerge.exe\" \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\" //m
+	keepBackup = false
+	trustExitCode = true
+[alias]
+	co = checkout
+	st = status
+	ca = commit -a -m
+	glgg = log --pretty=oneline --abbrev-commit master.. | awk '{out=""; for(i=2;i<=NF;i++){out=out" "$i}; out="## "out" ["$1"]"; print out}'
+[core]
+	ignorecase = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
