@@ -1,0 +1,32 @@
+#!/bin/zsh
+
+# Function to display help
+show_help() {
+  echo "Usage: $0 [options]"
+  echo
+  echo "Options:"
+  echo "  --help        Show this help message and exit"
+  echo "  --length      Output string length for random digits"
+  echo "  --type        (string|hex)"
+  echo
+}
+
+randomStringLength=25
+
+# Check for --help argument
+for arg in "$@"; do
+  case $arg in
+    --help)
+      show_help
+      exit 0
+      ;;
+    --length)
+      randomStringLength=$2
+  esac
+done
+
+
+randomText=$(curl -s "https://www.random.org/strings/?num=10&len=32&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new" \
+ | tr -d '\n')
+echo ${randomText:0:$randomStringLength}
+
