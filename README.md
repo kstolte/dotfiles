@@ -18,4 +18,10 @@ Custom Dot Files that I like to use
 
 - Configure signed commits from github
 
-download the common aliases to .zcommonAlias
+- 
+
+download the common aliases to .aliases
+```bash
+echo "source .aliases" >> .zprofile
+echo "export EDITOR='vim'" >> .zprofile
+```
