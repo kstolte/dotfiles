@@ -12,6 +12,8 @@ Custom Dot Files that I like to use
 - [NerdFonts](https://www.nerdfonts.com/font-downloads) - Specifically BlexMono Nerd Font
 ### mac
 - homebrew (brew.sh)
+  - brew install duck
+  - brew install gh
   - 
 
 - Configure signed commits from github
